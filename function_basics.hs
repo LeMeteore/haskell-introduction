@@ -23,3 +23,8 @@ isEven::Integer -> Bool
 isEven n
   | mod n 2 == 0 = True
   | otherwise = False
+
+-- a function taking 3 integers as arguments
+-- and returning an integer as result
+f::Int -> Int -> Int -> Int
+f x y z = x + y + z
