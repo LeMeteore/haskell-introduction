@@ -47,3 +47,44 @@ c2 = 'ダ'
 -- Strings are list of characters with special syntax
 s::String
 s = "Hello, Haskell"
+
+
+-- lists
+
+-- num, range, range2 are 3 objects of type list of integers
+nums, range, range2 :: [Integer]
+nums = [1,2,3,19]
+range = [1..100]
+range2 = [2,4..100]
+
+-- list of chars & Strings are the same thing
+hello::String
+hello = "hello"
+
+hello2::[Char]
+hello2 = ['h','e','l','l','o']
+
+-- helloSame is True
+helloSame = hello == hello2
+
+emptyList = []
+e1 = 1:[]
+e2 = 3:(1:[])
+e3 = 2:3:4:[]
+e4 = [2,3,4] == e3
+
+hailstone :: Integer -> Integer
+hailstone n
+  | n `mod` 2 == 0 = n `div` 2
+  | otherwise      = 3*n + 1
+
+-- Generate the sequence of hailstone iterations from a starting number.
+hailstoneSeq :: Integer -> [Integer]
+hailstoneSeq 1 = [1]
+hailstoneSeq n = n : hailstoneSeq (hailstone n)
+
+-- compute length of list of integer
+intListLength::[Integer] -> Integer
+intListLength [] = 0
+-- since we don't use x, we can replace (x:xs) by (_:xs)
+intListLength (x:xs) = 1 + intListLength xs
