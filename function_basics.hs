@@ -28,3 +28,7 @@ isEven n
 -- and returning an integer as result
 f::Int -> Int -> Int -> Int
 f x y z = x + y + z
+
+-- how to define an operator
+a |& b = (a || b) && not (a && b)
+test = True |& False

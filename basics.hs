@@ -88,3 +88,9 @@ intListLength::[Integer] -> Integer
 intListLength [] = 0
 -- since we don't use x, we can replace (x:xs) by (_:xs)
 intListLength (x:xs) = 1 + intListLength xs
+
+-- take first item from list
+xs = [1,2,3,4,5,6,7]
+xs0 = xs !! 0 -- take item at index zero
+xs1 = take 2 xs -- return first 2 items
+xs2 = drop 2 xs -- return all except first 2 items
